@@ -606,10 +606,10 @@
 }
 
 .embla__dot {
-  -webkit-tap-highlight-color: rgba(26, 26, 26, 0.25);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.25);
   -webkit-appearance: none;
   appearance: none;
-  background-color: transparent;
+  background-color: white;
   touch-action: manipulation;
   display: inline-flex;
   text-decoration: none;
@@ -625,7 +625,7 @@
   border-radius: 999px;
 }
 .embla__dot:after {
-  background-color: rgba(26, 26, 26, 0.25);
+  background-color: rgba(255, 252, 252, 0.25);
   width: 0.9vh;
   height: 0.9vh;
   display: flex;
@@ -639,7 +639,7 @@
 }
 .embla__dot--selected:after {
   width: 2vw;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
 }
 
 /* TECHSTACK SECTION */
