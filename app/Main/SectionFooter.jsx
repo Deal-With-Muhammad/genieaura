@@ -1,158 +1,133 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import SplitText from "gsap/src/SplitText";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
-import { Instagram, Linkedin, Twitter } from "lucide-react";
-
-gsap.registerPlugin(SplitText, ScrollTrigger);
+import React from "react";
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 export const SectionFooter = () => {
-  const topRef1 = useRef();
-  const topRef2 = useRef();
-  const topRef3 = useRef();
-  const centerRef1 = useRef();
-  const bottomRef1 = useRef();
-  const bottomRef2 = useRef();
-
-  useEffect(() => {
-    gsap.fromTo(
-      topRef1.current,
-      { filter: "blur(8px)", opacity: 0 },
-      {
-        delay: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.5,
-        ease: "sine",
-        scrollTrigger: { trigger: topRef1.current, start: "top 95%" },
-      }
-    );
-    gsap.fromTo(
-      topRef2.current,
-      { filter: "blur(8px)", opacity: 0 },
-      {
-        delay: 0.2,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.5,
-        ease: "sine",
-        scrollTrigger: { trigger: topRef1.current, start: "top 95%" },
-      }
-    );
-    gsap.fromTo(
-      topRef3.current,
-      { filter: "blur(8px)", opacity: 0 },
-      {
-        delay: 0.4,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.5,
-        ease: "sine",
-        scrollTrigger: { trigger: topRef1.current, start: "top 95%" },
-      }
-    );
-    gsap.fromTo(
-      centerRef1.current,
-      { filter: "blur(8px)", opacity: 0 },
-      {
-        delay: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.5,
-        ease: "sine",
-        scrollTrigger: { trigger: centerRef1.current, start: "top 95%" },
-      }
-    );
-    gsap.fromTo(
-      bottomRef1.current,
-      { filter: "blur(8px)", opacity: 0 },
-      {
-        delay: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.5,
-        ease: "sine",
-        scrollTrigger: { trigger: bottomRef1.current, start: "top 95%" },
-      }
-    );
-    gsap.fromTo(
-      bottomRef2.current,
-      { filter: "blur(8px)", opacity: 0 },
-      {
-        delay: 0.2,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.5,
-        ease: "sine",
-        scrollTrigger: { trigger: bottomRef2.current, start: "top 95%" },
-      }
-    );
-  }, []);
-
   return (
-    <section className="footer">
-      <div className="footer-content">
-        <div className="footer-content-left" ref={topRef1}>
-          <img src="/logo.png" className="h-24 w-56" alt="" />
-          {/* <h1 className="subheadline white">Genieaura</h1> */}
-          <p className="description grey">
-            Harnessing Cutting-Edge Visualization Technology to Transform Vision
-            into Tailored Digital Reality
-          </p>
-        </div>
-        <div className="footer-content-right" ref={topRef2}>
-          {/* <div className="footer-content-right-column">
-            <h2 className="description white">Company</h2>
-            <div className="footer-column-contents">
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">Home</p>
+    <footer className="bg-white border-t border-gray-200">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="mb-6">
+              {/* Logo */}
+              <div className="mb-4">
+                <img
+                  src="/logo.png"
+                  alt="Genieaura Logo"
+                  className="h-16 w-auto sm:h-20"
+                />
               </div>
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">About</p>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-lg">
+                Harnessing Cutting-Edge Visualization Technology to Transform
+                Vision into Tailored Digital Reality
+              </p>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-gray-500" />
+                <span className="text-gray-600 text-sm">
+                  contact@genieaura.com
+                </span>
               </div>
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">Projects</p>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-gray-500" />
+                <span className="text-gray-600 text-sm">+1 (555) 123-4567</span>
               </div>
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">Get In Touch</p>
+              <div className="flex items-center space-x-3">
+                <MapPin className="h-4 w-4 text-gray-500" />
+                <span className="text-gray-600 text-sm">San Francisco, CA</span>
               </div>
             </div>
-          </div> */}
-          {/* <div className="footer-content-right-column" ref={topRef3}>
-            <h2 className="description white">Legal</h2>
-            <div className="footer-column-contents">
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">
-                  Terms of Service
-                </p>
-              </div>
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-black mb-4">Legal</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                >
                   Privacy Policy
-                </p>
-              </div>
-              <div className="footer-column-contents-item">
-                <p className="description grey hover-text-grey">
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                >
                   Cookie Policy
-                </p>
-              </div>
-            </div>
-          </div> */}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                >
+                  Disclaimer
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="footer-divider" ref={centerRef1} />
-      <div className="footer-content-bottom">
-        <p className="small-description grey" ref={bottomRef1}>
-          © 2025 Genieaura All Rights Reserved
-        </p>
-        <div className="footer-socials" ref={bottomRef2}>
-          <Instagram strokeWidth={1.25} className="footer-socials-icon" />
-          <Twitter strokeWidth={1.25} className="footer-socials-icon" />
-          <Linkedin strokeWidth={1.25} className="footer-socials-icon" />
+
+      {/* Divider */}
+      <div className="border-t border-gray-800"></div>
+
+      {/* Bottom Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          {/* Copyright */}
+          <div className="text-gray-400 text-sm order-2 sm:order-1">
+            © 2025 Genieaura. All Rights Reserved.
+          </div>
+
+          {/* Social Media */}
+          <div className="flex items-center space-x-4 order-1 sm:order-2">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-full"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-full"
+              aria-label="Twitter"
+            >
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-full"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };

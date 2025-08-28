@@ -177,7 +177,7 @@ export const SectionProjects = () => {
   };
 
   return (
-    <section>
+    <>
       <div className="textbox">
         {/* <div className="subheadline-box " ref={subheadlineBoxRef}>
           <Star className="subheadline-box-icon" />
@@ -285,6 +285,6 @@ export const SectionProjects = () => {
       <div className="hover-cursor" ref={cursor}>
         <p className="small-description text-white">See More</p>
       </div>
-    </section>
+    </>
   );
 };

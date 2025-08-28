@@ -41,7 +41,7 @@ const Main = () => {
       <SectionServices />
       <div className="normal-padding" />
       <SectionProjects />
-      <div className="normal-padding" />
+      <div className="pt-20" />
       <SectionTechstack />
       <div className="normal-padding" />
       <SectionTestimonials />
