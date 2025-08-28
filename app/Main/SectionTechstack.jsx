@@ -327,13 +327,13 @@ export const SectionTechstack = () => {
                     Maximizing Results with <br /> Cutting-Edge Technology
                   </h2>
                   <button
-                    className="button2 hero-button button-transparent-border"
+                    className="flex border-1 border-gray-200 hover:bg-white transition text-white hover:text-black rounded-full py-2 px-4"
                     onClick={handleVideoButtonClick}
                   >
                     <div className="button-content">
-                      <span className="small-description">See Tools</span>
+                      <span className="text-sm mr-1">See Tools</span>
                     </div>
-                    <div className="button-circle button-circle-white">
+                    <div className="button-circle-white mt-0.5">
                       <ArrowUpRight className="button-icon button-icon-180" />
                     </div>
                   </button>
