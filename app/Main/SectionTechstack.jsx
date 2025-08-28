@@ -333,8 +333,8 @@ export const SectionTechstack = () => {
                     <div className="button-content">
                       <span className="text-sm mr-1">See Tools</span>
                     </div>
-                    <div className="button-circle-white mt-0.5">
-                      <ArrowUpRight className="button-icon button-icon-180" />
+                    <div className=" mt-1">
+                      <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </button>
                 </div>
