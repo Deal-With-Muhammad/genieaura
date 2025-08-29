@@ -48,8 +48,9 @@ const Main = () => {
       <div className="normal-padding" />
       <SectionKPI />
       <div className="normal-padding" />
-      <SectionFlower />
-      <div className="normal-padding" />
+      <div className="hidden sm:block">
+        <SectionFlower />
+      </div>
       <SectionFooter />
     </ReactLenis>
   );

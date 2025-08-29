@@ -201,7 +201,7 @@ export const SectionServices = () => {
             </button>
           </div>
         </div>
-        <div className="services-content-container">
+        <div className="services-content-container hidden">
           {/* <div className="services-content-container-left" />
           <div className="services-content-container-right" />
           <div className="services-content-container-bottom" />

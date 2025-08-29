@@ -1087,6 +1087,8 @@
   position: relative;
 }
 
+
+
 .testimonials-item-grid {
   position: absolute;
   bottom: 0;
@@ -1137,9 +1139,10 @@
   .testimonials-item {
     width: 80vw;  
     min-width: 80vw;
-    height: 50vw;  
+    height: 80vw;  
     /* background-size: 20px 20px;  */
   }
+
 }
 
 
@@ -1174,6 +1177,16 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+ 
+  .testimonials-item-profile {
+    width: 16vw;
+    height: 16vw;
+    border-radius: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+}
 .testimonials-item-profile img {
   width: 100%;
   height: 100%;
