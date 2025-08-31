@@ -179,7 +179,6 @@ export const AboutPageSection = ({}) => {
           </div>
         </div>
       </section>
-      <SectionFooter />
     </ReactLenis>
   );
 };

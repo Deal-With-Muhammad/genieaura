@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SectionFooter } from "./Main/SectionFooter";
 // import { Providers } from "./Providers";
 import { Navigation } from "./Navigation";
 export const metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
         {/* <Providers> */}
         <Navigation />
         {children}
+        <SectionFooter />
         {/* </Providers> */}
       </body>
     </html>

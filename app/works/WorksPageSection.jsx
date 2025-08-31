@@ -581,7 +581,6 @@ export const WorksPageSection = () => {
           <p className="small-description text-white">Drag</p>
         </div>
       </section>
-      <SectionFooter />
     </ReactLenis>
   );
 };

@@ -51,7 +51,6 @@ const Main = () => {
       <div className="hidden sm:block">
         <SectionFlower />
       </div>
-      <SectionFooter />
     </ReactLenis>
   );
 };

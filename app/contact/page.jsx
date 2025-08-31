@@ -312,7 +312,6 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <SectionFooter />
         </div>
       </div>
     </div>
