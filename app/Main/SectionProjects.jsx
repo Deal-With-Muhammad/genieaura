@@ -7,22 +7,14 @@ import React, {
   useRef,
   useState,
 } from "react";
-import dynamic from "next/dynamic";
 import gsap from "gsap";
 import SplitText from "gsap/src/SplitText";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Marquee from "react-fast-marquee";
-import { Hand, Star } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons,
-} from "./Carousel/EmblaCarouselArrowButtons";
-import { DotButton, useDotButton } from "./Carousel/EmblaCarouselDotButton";
+import { usePrevNextButtons } from "./Carousel/EmblaCarouselArrowButtons";
+import { useDotButton } from "./Carousel/EmblaCarouselDotButton";
 import Fade from "embla-carousel-fade";
-import Image from "next/image";
-
+import { Works } from "../../components/WorkCarousel";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export const SectionProjects = () => {
@@ -99,20 +91,6 @@ export const SectionProjects = () => {
     );
   }, []);
 
-  // EMBLA CAROUSEL
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Fade()]);
-
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
-
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
-
   // FOLLOWING CURSOR
   useEffect(() => {
     let mouseX = 0;
@@ -168,21 +146,9 @@ export const SectionProjects = () => {
     }
   }, [showCursor]);
 
-  const handleMouseEnter = () => {
-    setShowCursor(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowCursor(false);
-  };
-
   return (
     <>
       <div className="textbox">
-        {/* <div className="subheadline-box " ref={subheadlineBoxRef}>
-          <Star className="subheadline-box-icon" />
-          <h2 className="small-description grey">Featured Works</h2>
-        </div> */}
         <div className="titlebox">
           <div className="" />
           <h1 className="subheadline white" ref={titleRef}>
@@ -195,96 +161,8 @@ export const SectionProjects = () => {
           <br className="hide-on-desktop" /> giants into digital leaders.
         </p>
       </div>
-      <div
-        className="projects-content"
-        ref={contentRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={onNextButtonClick}
-      >
-        <div className="" />
-        <div className="" />
-        <div className="project-content-wrapper" ref={imageContainerRef}>
-          <div className="projects-carousel" ref={emblaRef}>
-            <div className="projects-carousel-row">
-              <div className="projects-carousel-item">
-                <Image
-                  src="/mockups/kopit.png"
-                  width={1920}
-                  height={1080}
-                  unoptimized
-                  className=""
-                  alt="Heavecorp project"
-                />
-              </div>
-              <div className="projects-carousel-item">
-                <Image
-                  src="/mockups/ferrati.png"
-                  width={1220}
-                  height={1280}
-                  unoptimized
-                  className=""
-                  alt=""
-                />
-              </div>
-              <div className="projects-carousel-item">
-                <Image
-                  src="/mockups/kinimatic.webp"
-                  width={1920}
-                  height={1080}
-                  unoptimized
-                  className="projects-carousel-item-image"
-                  alt=""
-                />
-              </div>
-              <div className="projects-carousel-item">
-                <Image
-                  src="/mockups/peak.webp"
-                  width={1920}
-                  height={1080}
-                  unoptimized
-                  className="projects-carousel-item-image"
-                  alt=""
-                />
-              </div>
-              <div className="projects-carousel-item">
-                <Image
-                  src="/mockups/vitalenta.webp"
-                  width={1920}
-                  height={1080}
-                  unoptimized
-                  className="projects-carousel-item-image"
-                  alt=""
-                />
-              </div>
-              <div className="projects-carousel-item">
-                <Image
-                  src="/mockups/rev.webp"
-                  width={1920}
-                  height={1080}
-                  unoptimized
-                  className="projects-carousel-item-image"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="embla__dots">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={"embla__dot".concat(
-                index === selectedIndex ? " embla__dot--selected" : ""
-              )}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="hover-cursor" ref={cursor}>
-        <p className="small-description text-white">See More</p>
-      </div>
+
+      <Works />
     </>
   );
 };

@@ -24,11 +24,11 @@ export interface CaseStudy {
 
 export const WORK_ITEMS: WorkItem[] = [
   {
-    id: "kinimatic",
-    title: "Kinimatic",
-    services: ["Web Design & Development", "Branding"],
+    id: "Kopit",
+    title: "Kopit Dashboard",
+    services: ["Software Development", "Custom CRM"],
     image: "/mockups/kopit.png",
-    alt: "Kinimatic project mockup",
+    alt: "Kopit project mockup",
   },
   {
     id: "vita-lenta-1",

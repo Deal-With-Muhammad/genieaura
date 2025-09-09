@@ -1,30 +1,24 @@
 "use client";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
-import "./works.css";
+import "../app/works/works.css";
 import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
-} from "../Main/Carousel/EmblaCarouselArrowButtons";
+} from "../app/Main/Carousel/EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowUpRight, Zap } from "lucide-react";
-import { SectionFooter } from "../Main/SectionFooter";
 import gsap from "gsap";
 import SplitText from "gsap/src/SplitText";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import {
   WORK_ITEMS,
   INDUSTRIES,
   CASE_STUDIES,
   WORKS_CONTENT,
-} from "./works-data";
-import { Works } from "../../components/WorkCarousel";
+} from "../app/works/works-data";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
-
-export const WorksPageSection = () => {
+export const Works = () => {
   const titleRef = useRef();
   const subtitleRef1 = useRef();
   const subtitleRef2 = useRef();
@@ -319,181 +313,89 @@ export const WorksPageSection = () => {
   }, [emblaApi2, onScroll]);
 
   return (
-    <ReactLenis root>
-      <section className="works">
-        <div className="works-content">
-          <div className="works-content-top">
-            <div className="works-content-top-text">
-              <div className="works-content-textbox">
-                <div className="titlebox">
-                  <div className="subpage- " />
-                  <h1 className="headline white" ref={titleRef}>
-                    {WORKS_CONTENT.hero.title}
-                  </h1>
-                </div>
-                <p
-                  className="description grey opacity-blur"
-                  ref={descriptionRef}
-                >
-                  {WORKS_CONTENT.hero.description}
-                </p>
-              </div>
-              <div className="works-content-top-divider" ref={lineRef} />
-            </div>
-            {/* start */}
-            <Works />
-            {/* Work carousel */}
-          </div>
-
-          <div className="works-industries">
-            <div className="works-subtextbox">
-              <div
-                className="subheadline-box opacity-blur"
-                ref={subheadlineBoxRef1}
-              >
-                <Zap className="subheadline-box-icon" />
-                <h2 className="small-description grey">
-                  {WORKS_CONTENT.industries.badge}
-                </h2>
-              </div>
-              <div className="titlebox">
-                <div className="titlebox-medium-gradient" />
-                <h1 className="subheadline white" ref={subtitleRef1}>
-                  {WORKS_CONTENT.industries.title}
-                </h1>
-              </div>
-              <p className="description grey" ref={subdescriptionRef1}>
-                {WORKS_CONTENT.industries.description}
-              </p>
-            </div>
-            <div className="works-industries-container">
-              <div className="works-industries-divider" />
-              {INDUSTRIES.map((industry, index) => (
-                <React.Fragment key={industry.id}>
-                  <div className="works-industries-item">
-                    <div className="works-industries-item-left">
-                      <h2 className="small-subheadline white">
-                        {industry.title}
-                      </h2>
-                    </div>
-                    <div className="works-industries-item-right">
+    <div
+      className="works-carousel-wrapper cursor-pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="works-carousel-wrapper-overlay" ref={worksItemRef1}></div>
+      <div className="works-carousel" ref={emblaRef2}>
+        <div className="works-carousel-row">
+          <div className="" />
+          {WORK_ITEMS.map((item) => (
+            <div key={item.id} className="works-item">
+              <div className="works-item-content">
+                <div className="works-item-content-textbox">
+                  <h2 className="subheadline black">{item.title}</h2>
+                  <div className="works-item-content-textbox-row">
+                    {item.services.map((service, index) => (
                       <div
-                        className="works-industries-item-right-imagebox"
-                        ref={(el) => (industryImageRefs.current[index] = el)}
+                        key={index}
+                        className="works-item-content-textbox-button"
                       >
-                        <img
-                          src={industry.image || "/placeholder.svg"}
-                          className="works-industries-item-right-image"
-                          alt={industry.alt}
-                        />
+                        <p className="small-description black">{service}</p>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                  <div className="works-industries-divider" />
-                </React.Fragment>
-              ))}
+                </div>
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  className="works-item-content-image"
+                  width={750}
+                  height={750}
+                  unoptimized
+                  loading="lazy"
+                  alt={item.alt}
+                />
+              </div>
+              <div className="works-item-border" />
             </div>
-          </div>
-
-          <div className="works-casestudies">
-            <div className="works-subtextbox">
-              <div
-                className="subheadline-box opacity-blur"
-                ref={subheadlineBoxRef2}
-              >
-                <Zap className="subheadline-box-icon" />
-                <h2 className="small-description grey">
-                  {WORKS_CONTENT.caseStudies.badge}
-                </h2>
-              </div>
-              <div className="titlebox">
-                <div className="titlebox-medium-gradient" />
-                <h1 className="subheadline white" ref={subtitleRef2}>
-                  {WORKS_CONTENT.caseStudies.title}
-                </h1>
-              </div>
-              <p className="description grey" ref={subdescriptionRef2}>
-                {WORKS_CONTENT.caseStudies.description}
+          ))}
+          <div className="works-item">
+            <div className="works-item-last-content">
+              <p className="description white">
+                {WORKS_CONTENT.cta.description}
               </p>
-            </div>
-            <div
-              className="casestudies-carousel-wrapper opacity-blur"
-              ref={carouselWrapperRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="casestudies-carousel" ref={emblaRef}>
-                <div className="casestudies-carousel-row">
-                  <div className="casestudies-item-padding" />
-                  {CASE_STUDIES.map((study) => (
-                    <div key={study.id} className="casestudies-item">
-                      <div className="casestudies-item-content">
-                        <div className="casestudies-item-content-textbox">
-                          <div className="subheadline-box">
-                            <Zap className="subheadline-box-icon" />
-                            <h2 className="small-description grey">
-                              {study.category}
-                            </h2>
-                          </div>
-                          <h3 className="small-subheadline white">
-                            {study.title}
-                          </h3>
-                          <p className="description grey">
-                            {study.description}
-                          </p>
-                        </div>
-                        <div className="casestudies-item-content-imagebox">
-                          <div className="button casestudies-item-content-imagebox-button">
-                            <div className="button-content">
-                              <span className="small-description white">
-                                Read More
-                              </span>
-                              <span className="small-description white">
-                                Read More
-                              </span>
-                            </div>
-                            <ArrowUpRight className="casestudies-item-content-imagebox-button-icon" />
-                          </div>
-                          <img
-                            src={study.image || "/placeholder.svg"}
-                            className="casestudies-item-content-image"
-                            alt={study.alt}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  <div className="casestudies-item-padding" />
-                </div>
-              </div>
-              <div className="casestudies-carousel-bottom">
-                <div className="casestudies-carousel-bottom-buttons">
-                  <PrevButton
-                    onClick={onPrevButtonClick1}
-                    disabled={prevBtnDisabled1}
-                  />
-                  <NextButton
-                    onClick={onNextButtonClick1}
-                    disabled={nextBtnDisabled1}
-                  />
-                </div>
-                <div className="embla__progress">
-                  <div
-                    className="embla__progress__bar"
-                    style={{
-                      transform: `translate3d(${scrollProgress}%,0px,0px)`,
-                    }}
-                  />
-                </div>
+              <h2 className="subheadline white">{WORKS_CONTENT.cta.title}</h2>
+              <div className="contact-button-wrapper">
+                <button className="contact-button-white">
+                  <span>
+                    <span className="contact-button-container-white">
+                      <span className="contact-button-primary-white"></span>
+                      <span className="contact-button-complimentary-white"></span>
+                    </span>
+                  </span>
+                  <span className="description black">
+                    {WORKS_CONTENT.cta.buttonText}
+                  </span>
+                </button>
               </div>
             </div>
+            <div className="works-item-border" />
           </div>
+          <div className="works-item-padding" />
         </div>
-
-        <div className="hover-cursor" ref={cursor}>
-          <p className="small-description text-white">Drag</p>
+      </div>
+      <div className="casestudies-carousel-bottom">
+        <div className="casestudies-carousel-bottom-buttons">
+          <PrevButton
+            onClick={onPrevButtonClick2}
+            disabled={prevBtnDisabled2}
+          />
+          <NextButton
+            onClick={onNextButtonClick2}
+            disabled={nextBtnDisabled2}
+          />
         </div>
-      </section>
-    </ReactLenis>
+        <div className="embla__progress">
+          <div
+            className="embla__progress__bar"
+            style={{
+              transform: `translate3d(${scrollProgress2}%,0px,0px)`,
+            }}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
