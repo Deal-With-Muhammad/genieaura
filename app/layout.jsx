@@ -1,6 +1,6 @@
 import "./globals.css";
 import { SectionFooter } from "./Main/SectionFooter";
-// import { Providers } from "./Providers";
+import { Providers } from "./Providers.jsx";
 import { Navigation } from "./Navigation";
 export const metadata = {
   title: "Genieaura | Cutting-Edge Website Design & Custom Digital Solutions",
@@ -42,11 +42,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <Providers> */}
-        <Navigation />
-        {children}
-        <SectionFooter />
-        {/* </Providers> */}
+        <Providers>
+          <Navigation />
+          {children}
+          <SectionFooter />
+        </Providers>
       </body>
     </html>
   );
