@@ -394,105 +394,14 @@ export const WorksPageSection = () => {
               ))}
             </div>
           </div>
-
-          <div className="works-casestudies">
-            <div className="works-subtextbox">
-              <div
-                className="subheadline-box opacity-blur"
-                ref={subheadlineBoxRef2}
-              >
-                <Zap className="subheadline-box-icon" />
-                <h2 className="small-description grey">
-                  {WORKS_CONTENT.caseStudies.badge}
-                </h2>
-              </div>
-              <div className="titlebox">
-                <div className="titlebox-medium-gradient" />
-                <h1 className="subheadline white" ref={subtitleRef2}>
-                  {WORKS_CONTENT.caseStudies.title}
-                </h1>
-              </div>
-              <p className="description grey" ref={subdescriptionRef2}>
-                {WORKS_CONTENT.caseStudies.description}
-              </p>
-            </div>
-            <div
-              className="casestudies-carousel-wrapper opacity-blur"
-              ref={carouselWrapperRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="casestudies-carousel" ref={emblaRef}>
-                <div className="casestudies-carousel-row">
-                  <div className="casestudies-item-padding" />
-                  {CASE_STUDIES.map((study) => (
-                    <div key={study.id} className="casestudies-item">
-                      <div className="casestudies-item-content">
-                        <div className="casestudies-item-content-textbox">
-                          <div className="subheadline-box">
-                            <Zap className="subheadline-box-icon" />
-                            <h2 className="small-description grey">
-                              {study.category}
-                            </h2>
-                          </div>
-                          <h3 className="small-subheadline white">
-                            {study.title}
-                          </h3>
-                          <p className="description grey">
-                            {study.description}
-                          </p>
-                        </div>
-                        <div className="casestudies-item-content-imagebox">
-                          <div className="button casestudies-item-content-imagebox-button">
-                            <div className="button-content">
-                              <span className="small-description white">
-                                Read More
-                              </span>
-                              <span className="small-description white">
-                                Read More
-                              </span>
-                            </div>
-                            <ArrowUpRight className="casestudies-item-content-imagebox-button-icon" />
-                          </div>
-                          <img
-                            src={study.image || "/placeholder.svg"}
-                            className="casestudies-item-content-image"
-                            alt={study.alt}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  <div className="casestudies-item-padding" />
-                </div>
-              </div>
-              <div className="casestudies-carousel-bottom">
-                <div className="casestudies-carousel-bottom-buttons">
-                  <PrevButton
-                    onClick={onPrevButtonClick1}
-                    disabled={prevBtnDisabled1}
-                  />
-                  <NextButton
-                    onClick={onNextButtonClick1}
-                    disabled={nextBtnDisabled1}
-                  />
-                </div>
-                <div className="embla__progress">
-                  <div
-                    className="embla__progress__bar"
-                    style={{
-                      transform: `translate3d(${scrollProgress}%,0px,0px)`,
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="hover-cursor" ref={cursor}>
           <p className="small-description text-white">Drag</p>
         </div>
+
+        <br />
+        <br />
       </section>
     </ReactLenis>
   );

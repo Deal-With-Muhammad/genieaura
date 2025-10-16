@@ -1,25 +1,25 @@
 export interface WorkItem {
-  id: string
-  title: string
-  services: string[]
-  image: string
-  alt: string
+  id: string;
+  title: string;
+  services: string[];
+  image: string;
+  alt: string;
 }
 
 export interface Industry {
-  id: string
-  title: string
-  image: string
-  alt: string
+  id: string;
+  title: string;
+  image: string;
+  alt: string;
 }
 
 export interface CaseStudy {
-  id: string
-  category: string
-  title: string
-  description: string
-  image: string
-  alt: string
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
 }
 
 export const WORK_ITEMS: WorkItem[] = [
@@ -65,69 +65,59 @@ export const WORK_ITEMS: WorkItem[] = [
     image: "/mockups/rev.webp",
     alt: "Rev Productions project mockup",
   },
-]
+];
 
 export const INDUSTRIES: Industry[] = [
   {
-    id: "supply-chain",
-    title: "Supply Chain & Logistics",
-    image: "/images/test14.webp",
-    alt: "Supply Chain & Logistics industry",
+    id: "sportswear",
+    title: "Sportswear & Manufacturing",
+    image:
+      "https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1528",
+    alt: "Sportswear & Manufacturing industry",
   },
   {
-    id: "luxury-travel",
-    title: "Luxury Travel & Hospitality",
-    image: "/images/test17.webp",
-    alt: "Luxury Travel & Hospitality industry",
+    id: "foodtech",
+    title: "FoodTech & Social Platforms",
+    image:
+      "https://images.unsplash.com/photo-1685810332449-22666f83adf2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1471",
+    alt: "FoodTech & Social Platforms industry",
   },
   {
     id: "real-estate",
-    title: "Real Estate & Development",
-    image: "/images/test18.webp",
-    alt: "Real Estate & Development industry",
+    title: "Real Estate & Property Management",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1428",
+    alt: "Real Estate & Property Management industry",
   },
   {
-    id: "technology-ai",
-    title: "Technology & AI",
-    image: "/images/test19.webp",
-    alt: "Technology & AI industry",
-  },
-]
-
-export const CASE_STUDIES: CaseStudy[] = [
-  {
-    id: "digital-market-future",
-    category: "Marketing",
-    title: "Digital Market Future",
-    description: "The New Era of the Digital Landscape: Where Do We Think the Market Is Going?",
-    image: "/casestudy/cs1.webp",
-    alt: "Digital Market Future case study",
+    id: "logistics",
+    title: "Transport & Logistics Solutions",
+    image:
+      "https://images.unsplash.com/photo-1518527989017-5baca7a58d3c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
+    alt: "Transport & Logistics Solutions industry",
   },
   {
-    id: "tech-evolution-ahead",
-    category: "Marketing",
-    title: "Tech Evolution Ahead",
-    description: "The New Era of the Digital Landscape: Where Do We Think the Market Is Going?",
-    image: "/casestudy/cs4.webp",
-    alt: "Tech Evolution Ahead case study",
+    id: "education",
+    title: "Education & Learning Systems",
+    image:
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1473",
+    alt: "Education & Learning Systems industry",
   },
   {
-    id: "navigating-trends",
-    category: "Marketing",
-    title: "Navigating Trends",
-    description: "The New Era of the Digital Landscape: Where Do We Think the Market Is Going?",
-    image: "/casestudy/cs3.webp",
-    alt: "Navigating Trends case study",
+    id: "technology",
+    title: "Technology & Software Development",
+    image:
+      "https://plus.unsplash.com/premium_photo-1669686968068-ef4133a3e782?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1025",
+    alt: "Technology & Software Development industry",
   },
   {
-    id: "innovation-in-motion",
-    category: "Marketing",
-    title: "Innovation in Motion",
-    description: "The New Era of the Digital Landscape: Where Do We Think the Market Is Going?",
-    image: "/casestudy/cs2.webp",
-    alt: "Innovation in Motion case study",
+    id: "nonprofit",
+    title: "Nonprofit & Social Impact",
+    image:
+      "https://images.unsplash.com/photo-1643321611132-15f7b8a63347?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
+    alt: "Nonprofit & Social Impact industry",
   },
-]
+];
 
 export const WORKS_CONTENT = {
   hero: {
@@ -152,4 +142,4 @@ export const WORKS_CONTENT = {
     title: "Let us get you a coffee.",
     buttonText: "Book a call",
   },
-}
+};
