@@ -211,20 +211,7 @@ export const aboutData = {
       image:
         "https://cdn.dribbble.com/userupload/16779043/file/original-f0fa9e97854c1b322ef711072fb0af9e.png?resize=1504x1128&vertical=center",
     },
-    {
-      title: "Design",
-      description:
-        "Design is your brand's voice. We craft visuals and layouts that communicate purpose, inspire trust, and connect emotionally. By harmonizing artistry with intent, our designs transform user interactions into meaningful, memorable experiences that align with your identity.",
-      image:
-        "https://cdn.dribbble.com/userupload/43761533/file/original-baf87adce93177903189e8b859ae7246.png?resize=1504x1128&vertical=center",
-    },
-    {
-      title: "Software Development",
-      description:
-        "We build custom software that evolves with your business. By addressing unique challenges, our tailored solutions streamline workflows, eliminate inefficiencies, and foster innovation—empowering you to scale, adapt, and maintain a competitive edge in an ever-changing landscape.",
-      image:
-        "https://cdn.dribbble.com/userupload/13938052/file/original-e154238d1518af202edd1a06323eba77.png?resize=1504x1128&vertical=center",
-    },
+
     {
       title: "AI Automation",
       description:

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/src/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShoppingCart, Smartphone, Database, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -13,49 +13,28 @@ export const SectionKPI = () => {
   const titleRef = useRef();
   const boxRefs = useRef([]);
 
-  // Services data with pricing - removed all gradient references
+  // Services data provided by user (Web, App, AI)
   const servicesData = [
     {
-      title: "Custom E-commerce",
-      price: "$15,000",
-      priceUnit: "Starting at",
+      title: "Web Development",
       description:
-        "Complete full-stack custom e-commerce websites with payment integration, inventory management, and responsive design for optimal user experience.",
-      features: [
-        "Payment Gateway Integration",
-        "Inventory Management",
-        "Mobile Responsive",
-        "SEO Optimized",
-      ],
-      icon: ShoppingCart,
+        "Your website should be more than functional—it should resonate. We craft bespoke digital experiences that merge innovation with creativity, delivering intuitive, visually stunning platforms that captivate audiences, reflect your brand's essence, and adapt to future opportunities.",
+      image:
+        "https://cdn.dribbble.com/userupload/16992356/file/original-049acea0cb3b604de901dc87f7599cdd.png?resize=1504x1128&vertical=center",
     },
     {
-      title: "Cross-Platform Mobile Apps",
-      price: "$25,000",
-      priceUnit: "Starting at",
+      title: "App Development",
       description:
-        "Complete full-stack mobile applications for both iOS and Android platforms using React Native, ensuring consistent performance across devices.",
-      features: [
-        "iOS & Android",
-        "Native Performance",
-        "Push Notifications",
-        "Offline Capability",
-      ],
-      icon: Smartphone,
+        "We design and develop mobile applications that blend performance, usability, and visual appeal. Whether for iOS, Android, or cross-platform, our apps are built to engage users, solve real problems, and adapt as your business grows—ensuring a seamless experience across all devices.",
+      image:
+        "https://cdn.dribbble.com/userupload/16779043/file/original-f0fa9e97854c1b322ef711072fb0af9e.png?resize=1504x1128&vertical=center",
     },
     {
-      title: "Custom CRM Systems",
-      price: "$20,000",
-      priceUnit: "Starting at",
+      title: "AI Automation",
       description:
-        "Tailored Customer Relationship Management systems designed to streamline your business processes, and enhance every customer interaction for maximum efficiency.",
-      features: [
-        "Lead Management",
-        "Analytics Dashboard",
-        "Automation Tools",
-        "Third-party Integrations",
-      ],
-      icon: Database,
+        "Harness the potential of artificial intelligence to streamline your workflows, predict trends, and unlock new growth opportunities. From intelligent chatbots to predictive analytics, we integrate AI seamlessly into your processes—making them smarter, faster, and more adaptive.",
+      image:
+        "https://cdn.dribbble.com/userupload/17922532/file/original-d82d086e0aecdc408f71b055633e9d57.png?resize=1504x1128&vertical=center",
     },
   ];
 
@@ -132,59 +111,40 @@ export const SectionKPI = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => {
-            const Icon = service.icon;
             return (
               <div
-                className="group relative bg-[#fafafa] bg-gradient-to-b from-[#fafafa]  to-[#eaeaea] border-1 border-[#eaeaea] rounded-4xl p-8 hover:bg-black hover:from-black hover:to-[#363636] hover:text-white transition-colors  duration-500 ease-in-out "
+                className="group relative bg-[#fafafa] bg-gradient-to-b from-[#fafafa] to-[#eaeaea] border-1 border-[#eaeaea] rounded-4xl p-6 hover:bg-slate-700   transition-colors duration-500 ease-in-out"
                 key={index}
                 ref={(el) => (boxRefs.current[index] = el)}
               >
-                {/* Icon - changed to simple black background */}
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black  mb-6">
-                  <Icon className="w-6 h-6 text-white " />
+                {/* Image */}
+                <div className="w-full mb-6 rounded-lg overflow-hidden relative h-40">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="rounded-lg"
+                  />
                 </div>
 
-                {/* Service title - changed to black text with hover white */}
-                <h3 className="text-xl font-bold text-black group-hover:text-white mb-2">
+                {/* Service title */}
+                <h3 className="text-xl font-bold text-black  mb-2">
                   {service.title}
                 </h3>
 
-                {/* Pricing */}
-                <div className="mb-4">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-black group-hover:text-white">
-                      {service.price}
-                    </span>
-                    <span className="text-sm text-gray-600 group-hover:text-gray-300">
-                      {service.priceUnit}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Description - changed to gray text */}
-                <p className="text-gray-700 group-hover:text-gray-300 mb-6 leading-relaxed">
+                {/* Description */}
+                <p className="text-gray-700   mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
-                {/* Features - removed gradient dots, using simple black dots */}
-                <div className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-white" />
-                      <span className="text-sm text-gray-600 group-hover:text-gray-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                {/* CTA Button */}
+                {/* <button className="w-full cursor-pointer mt-auto py-3 px-4 rounded-xl bg-black text-white font-medium transition-all duration-300 group-hover:bg-white group-hover:text-black  ">
+                  Learn More
+                </button> */}
 
-                {/* CTA Button - changed to simple black button */}
-                <button className="w-full py-3 px-4 rounded-xl bg-black text-white font-medium  transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:border group-hover:border-black">
-                  Get Started
-                </button>
-
-                {/* Decorative grid - changed to black dots */}
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
+                {/* Decorative grid (kept subtle) */}
+                {/* <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
                   <div className="grid grid-cols-8 gap-1 h-full">
                     {Array.from({ length: 64 }).map((_, i) => (
                       <div
@@ -193,21 +153,21 @@ export const SectionKPI = () => {
                       />
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             );
           })}
         </div>
 
         {/* Bottom CTA - changed to black and white theme */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <p className="text-gray-600 mb-6">
             Need a custom solution? Let's discuss your specific requirements.
           </p>
           <button className="px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-white hover:text-black hover:border-1 transition-colors duration-300">
             Schedule a Consultation
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

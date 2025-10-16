@@ -38,15 +38,14 @@ const Main = () => {
       <div className="border-padding">
         <div className="section-border"></div>
       </div>
-      <SectionServices />
       <div className="normal-padding" />
       <SectionProjects />
-      <div className="pt-20" />
-      <SectionTechstack />
+      <div className="normal-padding" />
+      <SectionKPI />
       <div className="normal-padding" />
       <SectionTestimonials />
       <div className="normal-padding" />
-      <SectionKPI />
+      <SectionTechstack />
       <div className="normal-padding" />
       <div className="hidden sm:block">
         <SectionFlower />
@@ -56,3 +55,7 @@ const Main = () => {
 };
 
 export default Main;
+
+{
+  /* <SectionServices /> */
+}
