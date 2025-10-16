@@ -56,7 +56,7 @@ export const SectionFooter = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="/privacy-policy"
                   className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
                 >
                   Privacy Policy
@@ -64,26 +64,10 @@ export const SectionFooter = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/terms"
                   className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
                 >
                   Terms of Service
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
-                >
-                  Cookie Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
-                >
-                  Disclaimer
                 </a>
               </li>
             </ul>
