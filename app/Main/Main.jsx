@@ -33,11 +33,7 @@ const Main = () => {
         </div>
       </div>
       <SectionHero />
-      {/* <div className="normal-padding" /> */}
-      {/* <SectionShowreel /> */}
-      <div className="border-padding">
-        <div className="section-border"></div>
-      </div>
+
       <div className="normal-padding" />
       <SectionProjects />
       <div className="normal-padding" />

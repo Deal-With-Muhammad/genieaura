@@ -226,6 +226,16 @@ export const SectionHero = () => {
 
   return (
     <section className="hero">
+      <video
+        className="absolute opacity-40 top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="hero-background-element-small" />
       <div className="hero-background-element-grid-small" />
       <div className="hero-content">

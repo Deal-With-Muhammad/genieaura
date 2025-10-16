@@ -1,131 +1,188 @@
 "use client";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
 
 export const Navigation = () => {
-  // ANIMATIONS
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navRef = useRef(null);
+  const navContainerRef = useRef(null);
+  const logoRef = useRef(null);
+  const textRef = useRef(null);
+  const centerNavRef = useRef(null);
+  const rightSideRef = useRef(null);
 
-  const navigationBar = useRef();
-  const navigationBarCenter = useRef();
-  const navigationBarCenterRef1 = useRef();
-  const navigationBarCenterRef2 = useRef();
-  const navigationBarCenterRef3 = useRef();
-  const navigationBarCenterRef4 = useRef();
-
-  useLayoutEffect(() => {
-    gsap.to(navigationBar.current, {
-      opacity: 1,
-      rotateY: "0deg",
-      scale: "1",
-      rotateX: "0deg",
-      translateY: "0vh",
-      duration: 0.75,
-      ease: "power1",
-      delay: 0.75,
-    });
+  // Initial animation on mount
+  useEffect(() => {
     gsap.fromTo(
-      navigationBar.current,
-      { width: "25%" },
-      { width: "100%", duration: 0.75, ease: "power1", delay: 1.75 }
+      navRef.current,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.3, ease: "power2.out", delay: 0.2 }
     );
-    gsap.fromTo(
-      navigationBarCenter.current,
-      { display: "none" },
-      { display: "flex", duration: 0.01, delay: 1.75 }
-    );
-    gsap.to(navigationBarCenterRef1.current, {
-      opacity: 1,
-      duration: 1,
-      delay: 1.75,
-    });
-    gsap.to(navigationBarCenterRef2.current, {
-      opacity: 1,
-      duration: 1,
-      delay: 1.85,
-    });
-    gsap.to(navigationBarCenterRef3.current, {
-      opacity: 1,
-      duration: 1,
-      delay: 1.95,
-    });
-    gsap.to(navigationBarCenterRef4.current, {
-      opacity: 1,
-      duration: 1,
-      delay: 2.05,
-    });
   }, []);
 
-  // NAVIGATION
+  // Scroll detection and smooth animation
+  useEffect(() => {
+    const handleScroll = () => {
+      const shouldBeScrolled = window.scrollY > 100;
 
-  const router = useRouter();
-  const pathname = usePathname();
-  let isAnimating = false;
+      if (shouldBeScrolled && !isScrolled) {
+        setIsScrolled(true);
+        gsap.to(navRef.current, {
+          backgroundColor: "rgba(255, 255, 255, 1)",
+          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.08)",
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+        gsap.to(logoRef.current, {
+          scale: 0.85,
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+        gsap.to(navContainerRef.current, {
+          paddingTop: "12px",
+          paddingBottom: "12px",
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+      } else if (!shouldBeScrolled && isScrolled) {
+        setIsScrolled(false);
+        gsap.to(navRef.current, {
+          backgroundColor: "rgba(255, 255, 255, 0)",
+          boxShadow: "none",
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+        gsap.to(logoRef.current, {
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+        gsap.to(navContainerRef.current, {
+          paddingTop: "24px",
+          paddingBottom: "24px",
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+      }
+    };
 
-  const handleNavigate = (path) => {
-    router.push(path);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScrolled]);
+
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Works", href: "/works" },
+  ];
+
+  const handleNavClick = (href) => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <div className="navigation-wrapper">
-      <div className="navigation-inside" ref={navigationBar}>
-        <div className="navigation-inside-left">
-          <Image
-            onClick={() => handleNavigate("/")}
-            src="/logo.png"
-            className="navigation-inside-left-image cursor-pointer"
-            alt=""
-            height={300}
-            width={300}
-          />
-        </div>
-        <div className="navigation-inside-big" ref={navigationBarCenter}>
-          <p
-            className="description white hover-text-white opacity"
-            ref={navigationBarCenterRef1}
-            onClick={() => handleNavigate("/")}
-          >
-            Home
-          </p>
-          <p
-            className="description white hover-text-white opacity"
-            ref={navigationBarCenterRef2}
-            onClick={() => handleNavigate("/about")}
-          >
-            About
-          </p>
-          <p
-            className="description white hover-text-white opacity"
-            ref={navigationBarCenterRef3}
-            onClick={() => handleNavigate("/works")}
-          >
-            Works
-          </p>
-          {/* <p className="small-description white hover-text-white opacity" ref={navigationBarCenterRef4} onClick={() => handleNavigate('/casestudies')} >Case Studies</p> */}
-        </div>
-        <div className="navigation-inside-right">
-          <button
-            className="button button-navigation button-transparent-border"
-            onClick={() => handleNavigate("/contact")}
-          >
-            <div className="button-content">
-              <span className="small-description">Get In Touch</span>
-              <span className="small-description">Get In Touch</span>
+    <>
+      <nav
+        ref={navRef}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-700"
+      >
+        <div
+          ref={navContainerRef}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
+        >
+          <div className="flex items-center justify-between gap-8">
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <div className="origin-center transition-transform duration-700">
+                <div className="relative w-10 h-10 sm:w-16 sm:h-16">
+                  <Image
+                    src="/logo.png"
+                    alt="GenieAura Logo"
+                    fill
+                    className="object-contain cursor-pointer "
+                    onClick={() => handleNavClick("/")}
+                  />
+                </div>
+              </div>
+              <span
+                ref={textRef}
+                className="text-xl relative right-6 sm:text-2xl text-gray-900 tracking-tight cursor-pointer hover:text-gray-700 transition-colors duration-300"
+              >
+                enieAura
+              </span>
             </div>
-            <div className="button-circle button-circle-white">
-              <ArrowUpRight className="button-icon" />
+
+            {/* Center Navigation */}
+            <div
+              ref={centerNavRef}
+              className="hidden md:flex items-center gap-8 lg:gap-12"
+            >
+              {navItems.map((item) => (
+                <Link
+                  href={item.href}
+                  className="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium text-sm sm:text-base relative group"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300" />
+                </Link>
+              ))}
             </div>
-          </button>
+
+            {/* Right Side - Get to know us */}
+            <div
+              ref={rightSideRef}
+              className="flex items-center gap-3 sm:gap-6"
+            >
+              <button
+                onClick={() => handleNavClick("/contact")}
+                className="hidden sm:flex items-center gap-2 px-5 sm:px-6 py-2.5 bg-gray-900 text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300 group"
+              >
+                <span>Get to know us</span>
+                <ArrowUpRight
+                  size={16}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                />
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 text-gray-900 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-300"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="navigation-inside-right-mobile">
-          <div className="navigation-inside`-right-mobile-line" />
-          <div className="navigation-inside-right-mobile-line" />
-          <div className="navigation-inside-right-mobile-line" />
-        </div>
-      </div>
-    </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200/50 bg-white/98">
+            <div className="px-4 sm:px-6 py-4 space-y-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavClick(item.href)}
+                  className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300 font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <button
+                onClick={() => handleNavClick("/contact")}
+                className="w-full mt-2 px-4 py-3 bg-gray-900 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all duration-300"
+              >
+                <span>Get to know us</span>
+                <ArrowUpRight size={16} />
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   );
 };
