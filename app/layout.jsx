@@ -1,7 +1,15 @@
+import dynamic from "next/dynamic";
 import "./globals.css";
 import { SectionFooter } from "./Main/SectionFooter";
-import { Providers } from "./Providers.jsx";
 import { Navigation } from "./Navigation";
+
+const Providers = dynamic(
+  () => import("./Providers").then((mod) => mod.Providers),
+  {
+    ssr: false, // ⛔ disables server-side rendering
+  }
+);
+
 export const metadata = {
   title: "Genieaura | Cutting-Edge Website Design & Custom Digital Solutions",
   description:
@@ -37,7 +45,6 @@ export const metadata = {
     images: ["/logo.png"],
   },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
