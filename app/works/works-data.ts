@@ -23,6 +23,13 @@ export interface CaseStudy {
 }
 
 export const WORK_ITEMS: WorkItem[] = [
+    {
+    id: "WOM",
+    title: "Word Of Mouth",
+    services: ["IOS/Android App", "Custom App", "Social Media App"],
+    image: "/mockups/wom.webp",
+    alt: "Word Of Mouth project mockup",
+  },
   {
     id: "Kopit",
     title: "Kopit Dashboard",
@@ -31,11 +38,11 @@ export const WORK_ITEMS: WorkItem[] = [
     alt: "Kopit project mockup",
   },
   {
-    id: "vita-lenta-1",
-    title: "Vita Lenta",
+    id: "Minimap",
+    title: "Minimap",
     services: ["Web Design & Development", "Branding"],
     image: "/mockups/ferrati.png",
-    alt: "Vita Lenta project mockup",
+    alt: "Minimap",
   },
   {
     id: "peak-creations",

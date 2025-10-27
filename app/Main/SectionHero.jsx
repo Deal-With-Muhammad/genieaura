@@ -245,7 +245,7 @@ export const SectionHero = () => {
               <div className="hero-titlebox">
                 <div className="hero- " />
                 <h1 className="headline hero-headline white" ref={titleRef}>
-                  Turning Ideas <br /> Into Impact
+                  We build what your <br /> competitors will wish they had
                 </h1>
               </div>
               <p
