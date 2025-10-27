@@ -109,6 +109,14 @@
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .works-item {
+        flex: 0 0 92vw;
+    }
+}
+
+
+
 .works-item-border {
     position: absolute;
     top: 0;
