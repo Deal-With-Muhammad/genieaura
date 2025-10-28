@@ -135,7 +135,7 @@
   flex-direction: column;
   color: #1a1a1a;
   /* Changed from white to dark */
-  gap: 5vh;
+  gap: 1vh;
   position: relative;
 }
 
@@ -146,9 +146,18 @@
   justify-content: space-between;
 }
 
-.hero-content-left,
+.hero-content-left
+{
+   width: 70%;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5vh;
+      position: relative;
+      justify-content: center;
+}
 .hero-content-right {
-  width: 50%;
+  width: 40%;
   height: 80vh;
   display: flex;
   flex-direction: column;
