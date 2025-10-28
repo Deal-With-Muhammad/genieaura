@@ -1,7 +1,79 @@
 // Server Component - SEO Optimized with VideoObject Schema
 import { IntroVideoPlayer } from "./intro-video-client";
-
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import SplitText from "gsap/src/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 export default function IntroVideoSection() {
+  const subheadlineBoxRef = useRef();
+  const titleRef = useRef();
+  const boxRefs = useRef([]);
+  const descriptionRef = useRef();
+  const descriptionSplit = new SplitText(descriptionRef.current, {
+    type: "words",
+  });
+  gsap.fromTo(
+    descriptionSplit.words,
+    { filter: "blur(8px)", opacity: 0 },
+    {
+      opacity: 1,
+      filter: "blur(0px)",
+      stagger: 0.025,
+      ease: "sine",
+      scrollTrigger: { trigger: descriptionRef.current, start: "top 95%" },
+    }
+  );
+
+  useEffect(() => {
+    // subheadline box animation
+    gsap.to(subheadlineBoxRef.current, {
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 0.5,
+      ease: "power1",
+      scrollTrigger: { trigger: subheadlineBoxRef.current, start: "top 95%" },
+    });
+
+    // headline text animation
+    const titleSplit = new SplitText(titleRef.current, { type: "words" });
+    gsap.fromTo(
+      titleSplit.words,
+      {
+        willChange: "opacity, transform",
+        filter: "blur(8px)",
+        opacity: 0,
+        yPercent: 100,
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        yPercent: 0,
+        stagger: 0.085,
+        duration: 1,
+        ease: "power2",
+        scrollTrigger: { trigger: titleRef.current, start: "top 95%" },
+      }
+    );
+
+    // Animate each service card
+    boxRefs.current.forEach((ref, i) => {
+      if (!ref) return;
+      gsap.fromTo(
+        ref,
+        { rotationY: 30, scale: 0.6, opacity: 0 },
+        {
+          delay: i * 0.2,
+          rotationY: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.75,
+          ease: "power1",
+          scrollTrigger: { trigger: ref, start: "top bottom" },
+        }
+      );
+    });
+  }, []);
   return (
     <>
       {/* VideoObject Schema for SEO */}
@@ -34,17 +106,21 @@ export default function IntroVideoSection() {
       <div className="py-16 md:py-32 bg-gradient-to-b from-background to-muted/20 mt-6">
         <div className="mx-auto max-w-6xl px-6 space-y-12 ">
           <div className="textbox mb-10">
-            <div className="subheadline-box">
-              <h2 className="text-sm font-medium small-description grey">
+            <div
+              ref={subheadlineBoxRef}
+              className="subheadline-box opacity-blur"
+              style={{ filter: "blur(8px)" }}
+            >
+              <h2 className="text-sm  font-medium small-description grey">
                 Watch Our Story{" "}
               </h2>
             </div>
             <div className="titlebox">
-              <h1 className="subheadline white">
+              <h1 ref={titleRef} className="subheadline white">
                 See How We Transform Businesses
               </h1>
             </div>
-            <p className="text-base text-gray-700">
+            <p ref={descriptionRef} className="text-base text-gray-700">
               Watch our introduction to understand how Genie Aura helps
               businesses like yours save time and grow faster with AI
               automation.
