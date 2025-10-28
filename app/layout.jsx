@@ -11,37 +11,30 @@ const Providers = dynamic(
 );
 
 export const metadata = {
-  title: "Genieaura | Cutting-Edge Website Design & Custom Digital Solutions",
+  title:
+    "Genieaura: Custom Website Design, AI Automation & Digital Solutions Agency",
+
   description:
-    "Harnessing Cutting-Edge Visualization Technology to Transform Vision into Tailored Digital Reality.",
+    "We build stunning, custom designed websites and immersive digital experiences. From expert UI/UX design to advanced 3D motion graphics and tailored full-stack development, Genieaura brings your vision to life.",
+
   keywords: [
-    "website design",
-    "UX/UI design",
-    "web development",
-    "full-stack development",
-    "custom websites",
-    "digital solutions",
-    "social media management",
-    "motion graphics",
-    "3D motion graphics",
-    "3D video production",
-    "3D modeling",
-    "interactive design",
-    "creative digital agency",
-    "multimedia design",
-    "3D rendering services",
-    "website redesign",
-    "branding and design",
-    "responsive web design",
-    "animation services",
-    "digital marketing solutions",
-    "advanced video production",
-    "digital media strategy",
+    "custom website design services",
+    "best UI/UX design agency",
+    "full-stack web development experts",
+    "modern website redesign and branding",
+    "interactive digital solutions for business",
+    "3D motion graphics and animation studio",
+    "professional 3D video production",
+    "social media management and strategy",
+    "creative digital agency for startups",
+    "responsive web design and development",
   ],
+
   openGraph: {
-    title: "Genieaura | Cutting-Edge Website Design & Custom Digital Solutions",
+    title:
+      "Genieaura: Custom Website Design, 3D Graphics & Digital Solutions Agency",
     description:
-      "Harnessing Cutting-Edge Visualization Technology to Transform Vision into Tailored Digital Reality.",
+      "We build stunning, custom-designed websites and immersive digital experiences. From expert UI/UX design to advanced 3D motion graphics, Genieaura brings your vision to life.",
     images: ["/logo.png"],
   },
 };
