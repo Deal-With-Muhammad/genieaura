@@ -15,6 +15,7 @@ import { usePrevNextButtons } from "./Carousel/EmblaCarouselArrowButtons";
 import { useDotButton } from "./Carousel/EmblaCarouselDotButton";
 import Fade from "embla-carousel-fade";
 import { Works } from "../../components/WorkCarousel";
+import { Zap } from "lucide-react";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export const SectionProjects = () => {
@@ -148,20 +149,32 @@ export const SectionProjects = () => {
 
   return (
     <>
+      {" "}
+      <div className="flex justify-center mb-2">
+        <div
+          ref={subheadlineBoxRef}
+          className="subheadline-box opacity-blur"
+          style={{ filter: "blur(8px)" }}
+        >
+          <Zap className="w-4 h-4 subheadline-box-icon" />
+          <h2 className="text-sm font-medium small-description grey">
+            Featured Projects
+          </h2>
+        </div>
+      </div>
       <div className="textbox">
         <div className="titlebox">
           <div className="" />
           <h1 className="subheadline white" ref={titleRef}>
-            Pioneering Projects That Consistently{" "}
-            <br className="hide-on-mobile" /> Redefine What’s Possible
+            Crafted by GenieAura
           </h1>
         </div>
-        <p className="description text-gray-800" ref={descriptionRef}>
-          Transforming startups, SMEs, and industry{" "}
-          <br className="hide-on-desktop" /> giants into digital leaders.
+        <p className="text-base text-gray-700" ref={descriptionRef}>
+          Every project we build blends strategy,
+          <br className="hide-on-desktop" /> technology, and imagination to give
+          our clients an edge that lasts.
         </p>
       </div>
-
       <Works />
     </>
   );

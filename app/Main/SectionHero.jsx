@@ -243,17 +243,18 @@ export const SectionHero = () => {
           <div className="hero-content-left">
             <div className="hero-textbox">
               <div className="hero-titlebox">
-                <div className="hero- " />
-                <h1 className="headline hero-headline white" ref={titleRef}>
-                  We build what your <br /> competitors will wish they had
+                <div className=" " />
+                <h1 className="headline  white" ref={titleRef}>
+                  We build what <br /> your competitors fear
                 </h1>
               </div>
+
               <p
                 className="big-description grey opacity-blur"
                 ref={descriptionRef}
               >
-                From concept to launch, we build products that are as beautiful
-                as they are powerful.
+                From AI to custom software, GenieAura gives your brand the
+                unbeatable edge competitors can’t match.
               </p>
             </div>
             <div className="hero-buttons-row">
@@ -338,9 +339,6 @@ export const SectionHero = () => {
             ))}
           </Marquee>
         </div>
-      </div>
-      <div className="hover-cursor" ref={cursor}>
-        <p className="small-description text-black">Drag</p>
       </div>
     </section>
   );
