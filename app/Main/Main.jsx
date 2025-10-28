@@ -12,6 +12,7 @@ import "./main.css";
 import { useLayoutEffect, useState } from "react";
 import { useProgress } from "@react-three/drei";
 import Loading from "../loading";
+import IntroVideoSection from "../../components/intro-video";
 
 const Main = () => {
   const { progress } = useProgress();
@@ -33,6 +34,7 @@ const Main = () => {
         </div>
       </div>
       <SectionHero />
+      <IntroVideoSection />
 
       <div className="normal-padding" />
       <SectionProjects />
