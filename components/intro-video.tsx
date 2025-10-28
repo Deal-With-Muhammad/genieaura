@@ -31,19 +31,25 @@ export default function IntroVideoSection() {
         }}
       />
 
-      <div className="py-16 md:py-32 bg-gradient-to-b from-background to-muted/20 mt-10">
-        <div className="mx-auto max-w-6xl px-6 space-y-12">
-          {/* Header */}
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <h2>Watch Our Story</h2>
-            <h2 className="text-4xl font-bold lg:text-5xl">
-              See How We Transform Businesses
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+      <div className="py-16 md:py-32 bg-gradient-to-b from-background to-muted/20 mt-6">
+        <div className="mx-auto max-w-6xl px-6 space-y-12 ">
+          <div className="textbox mb-10">
+            <div className="subheadline-box">
+              <h2 className="text-sm font-medium small-description grey">
+                Watch Our Story{" "}
+              </h2>
+            </div>
+            <div className="titlebox">
+              <h1 className="subheadline white">
+                See How We Transform Businesses
+              </h1>
+            </div>
+            <p className="text-base text-gray-700">
               Watch our introduction to understand how Genie Aura helps
               businesses like yours save time and grow faster with AI
               automation.
             </p>
+            <br />
           </div>
 
           {/* Video Player */}
