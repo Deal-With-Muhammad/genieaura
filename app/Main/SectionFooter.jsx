@@ -11,13 +11,13 @@ export const SectionFooter = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               {/* Logo */}
-              <div className="flex mb-4">
+              <div className="flex mb-4 relative">
                 <img
-                  src="/logo.png"
+                  src="/light.png"
                   alt="Genieaura Logo"
-                  className="h-16 w-auto sm:h-20"
+                  className="h-16 w-auto sm:h-24"
                 />
-                <h1 className="text-white text-4xl font-extrabold">
+                <h1 className="text-white absolute left-20 bottom-6 text-4xl font-extrabold">
                   GenieAura
                 </h1>
               </div>
