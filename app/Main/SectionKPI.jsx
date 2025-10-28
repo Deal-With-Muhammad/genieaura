@@ -49,7 +49,7 @@ export const SectionKPI = () => {
       description:
         "Harness the potential of artificial intelligence to streamline your workflows, predict trends, and unlock new growth opportunities. From intelligent chatbots to predictive analytics, we integrate AI seamlessly into your processes—making them smarter, faster, and more adaptive.",
       image:
-        "https://cdn.dribbble.com/userupload/17922532/file/original-d82d086e0aecdc408f71b055633e9d57.png?resize=1504x1128&vertical=center",
+        "https://cdn.dribbble.com/userupload/16992356/file/original-049acea0cb3b604de901dc87f7599cdd.png?resize=1504x1128&vertical=center",
     },
   ];
 
@@ -133,61 +133,52 @@ export const SectionKPI = () => {
           {servicesData.map((service, index) => {
             return (
               <div
-                className="group relative bg-[#fafafa] bg-gradient-to-b from-[#fafafa] to-[#eaeaea] border-1 border-[#eaeaea] rounded-4xl p-6 hover:bg-slate-700   transition-colors duration-500 ease-in-out"
+                className="group  relative rounded-3xl overflow-hidden h-[400px] transition-all duration-700 ease-out hover:scale-105  hover:shadow-[0_35px_80px_-15px_rgba(0,0,0,0.1)]"
                 key={index}
                 ref={(el) => (boxRefs.current[index] = el)}
               >
-                {/* Image */}
-                <div className="w-full mb-6 rounded-lg overflow-hidden relative h-40">
+                {/* Full background image */}
+                <div className="absolute inset-0">
                   <img
                     src={service.image}
                     alt={service.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-lg"
+                    className="w-full blur-3xl h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
+                  {/* Dark overlay for text readability */}
                 </div>
 
-                {/* Service title */}
-                <h3 className="text-xl font-bold text-black  mb-2">
-                  {service.title}
-                </h3>
+                {/* Content overlaid on image */}
+                <div className="relative h-full flex flex-col justify-center p-8 z-10">
+                  {/* Service title */}
+                  <h3 className="text-3xl font-bold text-black mb-4 transform transition-all duration-700 group-hover:translate-y-[-8px]">
+                    {service.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-gray-700   mb-6 leading-relaxed">
-                  {service.description}
-                </p>
+                  {/* Description */}
+                  <p className="text-gray-900 text-lg leading-relaxed transition-all duration-700 group-hover:text-black">
+                    {service.description}
+                  </p>
 
-                {/* CTA Button */}
-                {/* <button className="w-full cursor-pointer mt-auto py-3 px-4 rounded-xl bg-black text-white font-medium transition-all duration-300 group-hover:bg-white group-hover:text-black  ">
-                  Learn More
-                </button> */}
+                  {/* Decorative line */}
+                  <div className="mt-6 w-16 h-1 bg-black group-hover:w-full transition-all duration-700" />
+                </div>
 
-                {/* Decorative grid (kept subtle) */}
-                {/* <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
-                  <div className="grid grid-cols-8 gap-1 h-full">
-                    {Array.from({ length: 64 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="bg-black rounded-sm group-hover:bg-white"
-                      />
-                    ))}
-                  </div>
-                </div> */}
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-white transition-all duration-700 rounded-tr-3xl opacity-60 group-hover:opacity-100" />
               </div>
             );
           })}
         </div>
 
         {/* Bottom CTA - changed to black and white theme */}
-        {/* <div className="text-center mt-16">
+        <div className="text-center mt-16">
           <p className="text-gray-600 mb-6">
             Need a custom solution? Let's discuss your specific requirements.
           </p>
           <button className="px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-white hover:text-black hover:border-1 transition-colors duration-300">
             Schedule a Consultation
           </button>
-        </div> */}
+        </div>
       </div>
     </section>
   );

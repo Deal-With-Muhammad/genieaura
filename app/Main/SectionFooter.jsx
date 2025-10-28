@@ -1,16 +1,9 @@
 import React from "react";
-import {
-  Instagram,
-  Linkedin,
-  Twitter,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react";
 
 export const SectionFooter = () => {
   return (
-    <footer className="bg-gray-100 mb-16">
+    <footer className="bg-black mb-16">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -18,16 +11,19 @@ export const SectionFooter = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               {/* Logo */}
-              <div className="mb-4">
+              <div className="flex mb-4">
                 <img
                   src="/logo.png"
                   alt="Genieaura Logo"
                   className="h-16 w-auto sm:h-20"
                 />
+                <h1 className="text-white text-4xl font-extrabold">
+                  GenieAura
+                </h1>
               </div>
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-lg">
-                Harnessing Cutting-Edge Visualization Technology to Transform
-                Vision into Tailored Digital Reality
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg">
+                Building innovative software solutions that drive business
+                growth and digital transformation
               </p>
             </div>
 
@@ -35,29 +31,25 @@ export const SectionFooter = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-gray-500" />
-                <span className="text-gray-600 text-sm">
+                <span className="text-gray-400 text-sm">
                   contact@genieaura.com
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-gray-500" />
-                <span className="text-gray-600 text-sm">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-gray-500" />
-                <span className="text-gray-600 text-sm">San Francisco, CA</span>
+                <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
               </div>
             </div>
           </div>
 
           {/* Legal Links */}
           <div>
-            <h3 className="text-lg font-semibold text-black mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Legal</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="/privacy-policy"
-                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Privacy Policy
                 </a>
@@ -65,7 +57,7 @@ export const SectionFooter = () => {
               <li>
                 <a
                   href="/terms"
-                  className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Terms of Service
                 </a>

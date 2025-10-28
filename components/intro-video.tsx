@@ -31,7 +31,7 @@ export default function IntroVideoSection() {
         }}
       />
 
-      <section className="py-16 md:py-32 bg-gradient-to-b from-background to-muted/20 mt-10">
+      <div className="py-16 md:py-32 bg-gradient-to-b from-background to-muted/20 mt-10">
         <div className="mx-auto max-w-6xl px-6 space-y-12">
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default function IntroVideoSection() {
           {/* Video Player */}
           <IntroVideoPlayer />
         </div>
-      </section>
+      </div>
     </>
   );
 }
