@@ -263,8 +263,8 @@ export const SectionHero = () => {
                 ref={buttonRef1}
               >
                 <div className="button-content">
-                  <span className="small-description">See More</span>
-                  <span className="small-description">See More</span>
+                  <span className="text-xl">See More</span>
+                  <span className="text-xl">See More</span>
                 </div>
                 <div className="button-circle" ref={buttonCircleRef1}>
                   <ArrowUpRight className="button-icon button-icon-180" />
@@ -275,8 +275,8 @@ export const SectionHero = () => {
                 ref={buttonRef2}
               >
                 <div className="button-content">
-                  <span className="small-description">Get In Touch</span>
-                  <span className="small-description">Get In Touch</span>
+                  <span className="text-xl">Get In Touch</span>
+                  <span className="text-xl">Get In Touch</span>
                 </div>
                 <div className="button-circle">
                   <ArrowUpRight className="button-icon" />
