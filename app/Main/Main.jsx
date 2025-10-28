@@ -35,9 +35,9 @@ const Main = () => {
       <SectionHero />
 
       <div className="normal-padding" />
-      <SectionProjects />
-      <div className="normal-padding" />
       <SectionKPI />
+      <div className="normal-padding" />
+      <SectionProjects />
       <div className="normal-padding" />
       <SectionTestimonials />
       <div className="normal-padding" />
