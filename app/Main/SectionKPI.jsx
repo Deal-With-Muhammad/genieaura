@@ -12,6 +12,21 @@ export const SectionKPI = () => {
   const subheadlineBoxRef = useRef();
   const titleRef = useRef();
   const boxRefs = useRef([]);
+  const descriptionRef = useRef();
+  const descriptionSplit = new SplitText(descriptionRef.current, {
+    type: "words",
+  });
+  gsap.fromTo(
+    descriptionSplit.words,
+    { filter: "blur(8px)", opacity: 0 },
+    {
+      opacity: 1,
+      filter: "blur(0px)",
+      stagger: 0.025,
+      ease: "sine",
+      scrollTrigger: { trigger: descriptionRef.current, start: "top 95%" },
+    }
+  );
 
   // Services data provided by user (Web, App, AI)
   const servicesData = [
@@ -104,9 +119,14 @@ export const SectionKPI = () => {
           </div>
           <div className="titlebox">
             <h1 className="subheadline white" ref={titleRef}>
-              Solutions That Drive Results
+              Here’s How We Help
             </h1>
           </div>
+          <p className="text-base text-gray-700" ref={descriptionRef}>
+            We build AI tools and custom software that take the heavy lifting
+            <br className="hide-on-desktop" /> off your plate and give you more
+            time to grow.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
