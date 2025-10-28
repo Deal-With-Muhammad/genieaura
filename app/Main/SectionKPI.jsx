@@ -171,14 +171,14 @@ export const SectionKPI = () => {
         </div>
 
         {/* Bottom CTA - changed to black and white theme */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <p className="text-gray-600 mb-6">
             Need a custom solution? Let's discuss your specific requirements.
           </p>
           <button className="px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-white hover:text-black hover:border-1 transition-colors duration-300">
             Schedule a Consultation
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

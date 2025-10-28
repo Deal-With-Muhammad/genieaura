@@ -36,7 +36,6 @@ const Main = () => {
       <SectionHero />
       <IntroVideoSection />
 
-      <div className="normal-padding" />
       <SectionKPI />
       <div className="normal-padding" />
       <SectionProjects />
