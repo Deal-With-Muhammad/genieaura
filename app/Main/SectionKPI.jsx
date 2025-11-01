@@ -150,7 +150,7 @@ export const SectionKPI = () => {
                 {/* Content overlaid on image */}
                 <div className="relative h-full flex flex-col justify-center p-8 z-10">
                   {/* Service title */}
-                  <h3 className="text-3xl font-bold text-black mb-4 transform transition-all duration-700 group-hover:translate-y-[-8px]">
+                  <h3 className="text-xl font-bold text-black mb-2 transform transition-all duration-700 group-hover:translate-y-[-8px]">
                     {service.title}
                   </h3>
 
