@@ -11,7 +11,7 @@ import { SectionKPI } from "./SectionKPI";
 import "./main.css";
 import { useLayoutEffect, useState } from "react";
 import { useProgress } from "@react-three/drei";
-import Loading from "../loading";
+// import Loading from "../loading";
 import IntroVideoSection from "../../components/intro-video";
 
 const Main = () => {
@@ -28,11 +28,6 @@ const Main = () => {
 
   return (
     <ReactLenis root>
-      <div className={`initial-loading-screen ${fadeOut ? "fade-out" : ""}`}>
-        <div className="loading-image-box">
-          <Loading />
-        </div>
-      </div>
       <SectionHero />
       <IntroVideoSection />
 
