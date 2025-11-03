@@ -95,7 +95,7 @@ export const Navigation = () => {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
         >
           <div className="flex items-center justify-between gap-8">
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <div className="origin-center transition-transform duration-700">
                 <div className="relative w-10 h-10 sm:w-16 sm:h-16">
                   <Image
@@ -103,7 +103,6 @@ export const Navigation = () => {
                     alt="GenieAura Logo"
                     fill
                     className="object-contain cursor-pointer "
-                    onClick={() => handleNavClick("/")}
                   />
                 </div>
               </div>
@@ -113,7 +112,7 @@ export const Navigation = () => {
               >
                 enieAura
               </span>
-            </div>
+            </Link>
 
             {/* Center Navigation */}
             <div
@@ -122,6 +121,7 @@ export const Navigation = () => {
             >
               {navItems.map((item) => (
                 <Link
+                  key={item.label}
                   href={item.href}
                   className="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium text-sm sm:text-base relative group"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -137,18 +137,15 @@ export const Navigation = () => {
               ref={rightSideRef}
               className="flex items-center gap-3 sm:gap-6"
             >
-              <a href="/contact">
-                <button
-                  onClick={() => handleNavClick("/contact")}
-                  className="hidden sm:flex items-center gap-2 px-5 sm:px-6 py-2.5 bg-gray-900 text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300 group"
-                >
+              <Link href="/contact">
+                <button className="hidden sm:flex items-center gap-2 px-5 sm:px-6 py-2.5 bg-gray-900 text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300 group">
                   <span>Get to know us</span>
                   <ArrowUpRight
                     size={16}
                     className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
                   />
                 </button>
-              </a>
+              </Link>
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -165,21 +162,23 @@ export const Navigation = () => {
           <div className="md:hidden border-t border-gray-200/50 bg-white/98">
             <div className="px-4 sm:px-6 py-4 space-y-2">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.label}
-                  onClick={() => handleNavClick(item.href)}
+                  href={item.href}
+                  // onClick={() => handleNavClick(item.href)}
                   className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300 font-medium"
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
-              <button
+              <Link
+                href="/contact"
                 onClick={() => handleNavClick("/contact")}
                 className="w-full mt-2 px-4 py-3 bg-gray-900 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all duration-300"
               >
                 <span>Get to know us</span>
                 <ArrowUpRight size={16} />
-              </button>
+              </Link>
             </div>
           </div>
         )}
