@@ -79,7 +79,7 @@ export const SectionFooter = () => {
           </div>
 
           {/* Social Media */}
-          <div className="flex items-center space-x-4 order-1 sm:order-2">
+          {/* <div className="flex items-center space-x-4 order-1 sm:order-2">
             <a
               href="#"
               className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-full"
@@ -101,7 +101,7 @@ export const SectionFooter = () => {
             >
               <Linkedin className="h-5 w-5" />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

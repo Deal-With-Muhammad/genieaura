@@ -10,6 +10,7 @@ import {
 } from "./Carousel/EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import { Send } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -153,15 +154,20 @@ export const SectionTestimonials = () => {
                     Let us get you a coffee.
                   </p>
                   <div className="contact-button-wrapper">
-                    <button className="contact-button-white">
-                      <span>
-                        <span className="contact-button-container-white">
-                          <span className="contact-button-primary-white"></span>
-                          <span className="contact-button-complimentary-white"></span>
+                    <Link
+                      className="contact-button-wrapper"
+                      href="https://wa.me/+923289462807"
+                    >
+                      <button className="contact-button-white">
+                        <span>
+                          <span className="contact-button-container-white">
+                            <span className="contact-button-primary-white"></span>
+                            <span className="contact-button-complimentary-white"></span>
+                          </span>
                         </span>
-                      </span>
-                      <span className="description black">Book a call</span>
-                    </button>
+                        <span className="description black">Lets Talk</span>
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="background-gradient-circle-3" />

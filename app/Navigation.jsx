@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -137,10 +138,10 @@ export const Navigation = () => {
               ref={rightSideRef}
               className="flex items-center gap-3 sm:gap-6"
             >
-              <Link href="/contact">
-                <button className="hidden sm:flex items-center gap-2 px-5 sm:px-6 py-2.5 bg-gray-900 text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300 group">
-                  <span>Get to know us</span>
-                  <ArrowUpRight
+              <Link href="https://wa.me/+923289462807">
+                <button className="cursor-pointer hidden sm:flex items-center gap-2 px-5 sm:px-6 py-2.5 bg-gray-900 text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300 group">
+                  <span>Whatsapp</span>
+                  <FaWhatsapp
                     size={16}
                     className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
                   />
@@ -172,12 +173,12 @@ export const Navigation = () => {
                 </Link>
               ))}
               <Link
-                href="/contact"
+                href="https://wa.me/+601139865270"
                 onClick={() => handleNavClick("/contact")}
                 className="w-full mt-2 px-4 py-3 bg-gray-900 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all duration-300"
               >
-                <span>Get to know us</span>
-                <ArrowUpRight size={16} />
+                <span>Whatsapp</span>
+                <FaWhatsapp />
               </Link>
             </div>
           </div>

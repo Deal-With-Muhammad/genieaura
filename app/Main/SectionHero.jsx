@@ -258,7 +258,7 @@ export const SectionHero = () => {
               </p>
             </div>
             <div className="hero-buttons-row">
-              <button
+              {/* <button
                 className="button button-transparent-border opacity-blur"
                 ref={buttonRef1}
               >
@@ -281,7 +281,7 @@ export const SectionHero = () => {
                 <div className="button-circle">
                   <ArrowUpRight className="button-icon" />
                 </div>
-              </button>
+              </button> */}
             </div>
           </div>
           <div
