@@ -32,12 +32,12 @@ export const SectionFooter = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-gray-500" />
                 <span className="text-gray-400 text-sm">
-                  contact@genieaura.com
+                  geniemen.contact@gmail.com
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-gray-500" />
-                <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-400 text-sm">+60 11-3986 5270</span>
               </div>
             </div>
           </div>

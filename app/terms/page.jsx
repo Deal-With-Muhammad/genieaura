@@ -69,7 +69,7 @@ export default function TermsPage() {
         <footer className="mt-10 text-sm text-gray-400">
           <p>
             If you have questions about these Terms, contact us via the contact
-            page or email contact@genieaura.com.
+            page or email geniemen.contact@gmail.com.
           </p>
         </footer>
       </div>
