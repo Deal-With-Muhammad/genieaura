@@ -172,7 +172,7 @@ export const SectionProjects = () => {
         <p className="text-base text-gray-700" ref={descriptionRef}>
           Every project we build blends strategy,
           <br className="hide-on-desktop" /> technology, and imagination to give
-          our clients an edge that lasts.
+          our clients <br className="hide-on-desktop" /> an edge that lasts.
         </p>
       </div>
       <Works />
