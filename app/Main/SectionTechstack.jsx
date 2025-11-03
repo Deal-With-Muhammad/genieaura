@@ -326,7 +326,7 @@ export const SectionTechstack = () => {
                   <h2 className="small-subheadline text-white hide-on-mobile">
                     Maximizing Results with <br /> Cutting-Edge Technology
                   </h2>
-                  {/* <button
+                  <button
                     className="flex border-1 border-gray-200 hover:bg-white transition text-white hover:text-black rounded-full py-2 px-4"
                     onClick={handleVideoButtonClick}
                   >
@@ -336,7 +336,7 @@ export const SectionTechstack = () => {
                     <div className=" mt-1">
                       <ArrowUpRight className="h-4 w-4" />
                     </div>
-                  </button> */}
+                  </button>
                 </div>
               </div>
               <video
