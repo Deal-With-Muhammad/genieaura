@@ -123,9 +123,9 @@ export const SectionKPI = () => {
             </h1>
           </div>
           <p className="text-base text-gray-700" ref={descriptionRef}>
-            We build AI tools and custom software that take the heavy lifting
-            <br className="hide-on-desktop" /> off your plate and give you more
-            time to grow.
+            We build AI tools and custom software that take the{" "}
+            <br className="hide-on-desktop" /> heavy lifting off your plate and
+            give you more time to grow.
           </p>
         </div>
 
