@@ -32,8 +32,9 @@ const Main = () => {
       <IntroVideoSection />
 
       <SectionKPI />
-      <div className="normal-padding" />
-      <SectionProjects />
+      <div className=" pt-32 overflow-x-hidden">
+        <SectionProjects />
+      </div>
       <div className="normal-padding" />
       <SectionTestimonials />
       <div className="normal-padding" />
