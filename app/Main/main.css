@@ -674,6 +674,7 @@
   flex-wrap: wrap;
   gap: 1vw;
   perspective: 2000px;
+  justify-content: center;
 }
 
 .techstack-item-big,
